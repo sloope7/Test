@@ -1,26 +1,48 @@
-package Test;
+ackage Test;
 
-public class Calculator {
-	public static int addition (int a, int b){
-        return a + b;
-    }
-    public static double addition (double a, double b){
-        return a + b;
-    }
-    public static int subtraction (int a, int b){
-        return a - b;
-    }
-    public static double subtraction (double a, double b){
-        return a - b;
-    }
-    public static int multiplication (int a, int b){
-        return a * b;
-    }
-    public static double multiplication (double a, double b){
-        return a * b;
-    }
-    public static double division (double a, double b){
-        return a / b;
-    }
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.runners.JUnit4;
+
+public class CalculatorTest {
+
+	@Test
+	public void testAdditionIntInt(){
+		assertTrue(Calculator.addition(3, 5) == 8);
+		
+		
+	}
+
+	@Test
+	public void testAdditionDoubleDouble() {
+		assertTrue(Calculator.addition(3.5,6) == 9.5);
+		
+	}
+
+	@Test
+	public void testSubtractionIntInt() {
+		assertEquals(5, Calculator.subtraction(15, 10));
+	}
+
+	@Test
+	public void testSubtractionDoubleDouble() {
+		assertTrue(Calculator.subtraction(10.5,5) == 5.5);
+	}
+
+	@Test
+	public void testMultiplicationIntInt() {
+		assertEquals(150, Calculator.multiplication(15, 10));
+	}
+
+	@Test
+	public void testMultiplicationDoubleDouble() {
+		assertTrue(Calculator.multiplication(1.5,1.5) == 2.25);
+	}
+
+	@Test
+	public void testDivision() {
+		assertTrue(Calculator.division(10, 5) == 2);
+	}
 
 }
