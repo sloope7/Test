@@ -44,5 +44,16 @@ public class CalculatorTest {
 	public void testDivision() {
 		assertTrue(Calculator.division(10, 5) == 2);
 	}
+	
+	@Test
+	public void testDivision_2() {
+		try{
+			Calculator.division(10, 0);
+			assertTrue(false);
+		} catch(Exception ex) {
+			assertTrue(true);
+		}
+		
+	}
 
 }
